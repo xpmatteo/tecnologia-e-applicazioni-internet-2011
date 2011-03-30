@@ -1,0 +1,23 @@
+
+Scopo dell'esercizio è realizzare un clone del comando paste(1) di Unix.
+
+Lavora con TDD.  Fai passare un test alla volta.  Quando il test passa, 
+rimuovi tutta la duplicazione che vedi.  Quindi decommenta il prossimo test. 
+
+I test da implementare sono
+
+ 0. file vuoto + file vuoto = file vuoto
+ 1. "aaa" + "bbb" = "aaabbb"
+ 2. "aaa\nbbb\nccc" + "xxx\nyyy\nzzz" = "aaaxxx\nbbbyyy\nccczzz"
+ 3. "aaa\nbbb\nccc" + "xxx" = "aaaxxx\nbbb\nccc"
+ 4. numero di file di input arbitrario: 2 o più di due
+ 5. numerare le righe
+ 6. separatore fra le colonne
+
+I test sono già implementati, c'è "solo" da scrivere l'implementazione.
+
+Cerca di realizzare un "nucleo" del programma che sia in grado di 
+ricevere nuovi requisiti come quelli che nascono con i test 5 e 6 senza 
+molte modifiche e soprattutto con pochi IF.  Cerca di dividere il programma
+in una parte che lavora con i file, e una parte che lavora esclusivamente
+con reader e writer.
