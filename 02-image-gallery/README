@@ -19,7 +19,13 @@ You will find a set of pictures in the folder ../pictures-at-an-exhibition.
 
 - Fifth stage: change the application so that it reads the .properties files and shows the titles and captions for each picture.
 
-- Sixth stage: (optional) change the app so that it shows a thumbnail for each picture.  When I click the thumbnail, it should show the full-size picture.
+- Sixth stage: the name of the directory that holds the picture must not appear in the source code!  You have three options:
+  - Pass it as an argument on the command line
+  - Pass it as a system property, e.g., -Dpicture.gallery.pathname=/home/foo/bar
+  - Write it in a "properties" file that is loaded by the application at startup.
+  In all cases the application should refuse to start if the pathname is not given or not found, or points to an unreadable directory, and produce a *clear* error message.  
+
+- Seventh stage: (optional) change the app so that it shows a thumbnail for each picture.  When I click the thumbnail, it should show the full-size picture.
 
 
 
