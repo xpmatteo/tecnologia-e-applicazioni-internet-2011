@@ -1,23 +1,17 @@
 package it.xpug.tai.lesson02.gallery;
 
 
-import org.mortbay.jetty.Handler;
 import org.mortbay.jetty.Server;
 
 
 public class GalleryApp {
 	
 	private Server server;
-	private Handler handler;
 
-	public GalleryApp(Handler handler) {
-		this.handler = handler;
-	}
-	
 	public void start(int port) {
 		server = new Server(port);
 		try {
-			server.addHandler(handler);
+			server.addHandler(new GalleryHandler());
 			server.start();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -33,13 +27,7 @@ public class GalleryApp {
 	}
 
 	public static void main(String[] args) {
-		String title = "Titolo!";
-		String pictureUrl = "/mypicture";
-		String caption = "A caption";
-		
-		Handler handler = new GalleryHandler(new PicturePage(title , pictureUrl , caption));
-		GalleryApp galleryApp = new GalleryApp(handler);
-		
+		GalleryApp galleryApp = new GalleryApp();
 		galleryApp.start(8080);
 	}
 }
