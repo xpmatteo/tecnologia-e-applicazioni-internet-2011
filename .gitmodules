@@ -1,0 +1,3 @@
+[submodule "mattoni"]
+	path = mattoni
+	url = git@github.com:xpmatteo/mattoni.git
