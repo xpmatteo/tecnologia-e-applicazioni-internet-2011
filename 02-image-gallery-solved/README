@@ -1,0 +1,31 @@
+Picture Gallery!
+
+Object of the exercise is to familiarize ourselves with writing simple web apps in Java.
+
+You will find a set of pictures in the folder ../pictures-at-an-exhibition.
+
+- First stage: import the project in Eclipse and run it.  Open the browser at http://localhost:8080/ and you should see the application.  You might have to correct a pathname to see the picture though.
+
+- Second stage: change the application so that it displays an HTML unordered list (i.e. with bullet points) of the filenames of all pictures in the ../pictures-at-an-exhibition folder.  At this stage you may leave the pathname hardcoded in the Java code.  You should see
+
+  * boccioni.lastrada.jpg
+  * g.de_chirico_la_torre_rossa.jpg
+  * joie.jpg
+  * le-nord-sud.jpg
+  
+- Third stage: change the application so that when I visit http://localhost:8080/joie.jpg I see the corresponding picture (no HTML, just the picture)
+
+- Fourth stage: change the application so that it shows the actual pictures under the names of the files.  
+
+- Fifth stage: change the application so that it reads the .properties files and shows the titles and captions for each picture.
+
+- Sixth stage: the name of the directory that holds the picture must not appear in the source code!  You have three options:
+  - Pass it as an argument on the command line
+  - Pass it as a system property, e.g., -Dpicture.gallery.pathname=/home/foo/bar
+  - Write it in a "properties" file that is loaded by the application at startup.
+  In all cases the application should refuse to start if the pathname is not given or not found, or points to an unreadable directory, and produce a *clear* error message.  
+
+- Seventh stage: (optional) change the app so that it shows a thumbnail for each picture.  When I click the thumbnail, it should show the full-size picture.
+
+
+
