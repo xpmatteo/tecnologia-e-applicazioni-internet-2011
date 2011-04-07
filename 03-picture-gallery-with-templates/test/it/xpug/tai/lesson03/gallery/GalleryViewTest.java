@@ -1,12 +1,8 @@
 package it.xpug.tai.lesson03.gallery;
 
-import it.xpug.tai.lesson03.gallery.GalleryView;
-
 import name.vaccari.matteo.xml.XmlFragment;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 
 public class GalleryViewTest {

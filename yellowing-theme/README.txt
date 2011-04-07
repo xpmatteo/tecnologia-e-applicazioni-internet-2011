@@ -1,0 +1,1 @@
+A free graphic layout for use in the 03-picture-gallery-with-templates exercise.

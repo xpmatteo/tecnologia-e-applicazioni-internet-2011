@@ -1,0 +1,1 @@
+A collection of fine paintings for use with the picture-gallery exercise

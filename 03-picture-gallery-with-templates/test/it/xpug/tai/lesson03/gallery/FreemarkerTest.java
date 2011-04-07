@@ -3,7 +3,6 @@ package it.xpug.tai.lesson03.gallery;
 import java.io.File;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
