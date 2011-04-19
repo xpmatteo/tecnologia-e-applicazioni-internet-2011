@@ -1,6 +1,5 @@
 package it.xpug.tai.lesson04.gallery;
 
-import it.xpug.tai.lesson04.gallery.GalleryView;
 import name.vaccari.matteo.xml.XmlFragment;
 
 import org.junit.Test;

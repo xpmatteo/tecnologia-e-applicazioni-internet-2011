@@ -1,10 +1,5 @@
 package it.xpug.tai.lesson04.gallery;
 
-import it.xpug.tai.lesson04.gallery.PictureController;
-import it.xpug.tai.lesson04.gallery.PictureUrl;
-
-import java.io.File;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,8 +9,8 @@ public class PictureControllerTest {
 
 	private FakeTaiResponse response = new FakeTaiResponse();
 	private String url = new PictureUrl().toUrl("foo.jpg");
-	private File imageDirectory = new File("");
-	private PictureController controller = new PictureController(imageDirectory );
+	private PicturesDirectory picturesDirectory = new PicturesDirectory("");
+	private PictureController controller = new PictureController(picturesDirectory );
 
 	@Test
 	public void handlesPictureUrls() throws Exception {
@@ -39,7 +34,7 @@ public class PictureControllerTest {
 	@Test
 	public void savesBytesForImage() throws Exception {
 		controller.handle(url, response);
-		assertEquals(new File(imageDirectory, "foo.jpg"), response.fileCopiedToOutputByController);
+		assertEquals(picturesDirectory.getFile("foo.jpg"), response.fileCopiedToOutputByController);
 	}
 
 }

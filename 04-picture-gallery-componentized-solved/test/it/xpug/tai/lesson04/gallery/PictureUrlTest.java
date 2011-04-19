@@ -1,7 +1,5 @@
 package it.xpug.tai.lesson04.gallery;
 
-import it.xpug.tai.lesson04.gallery.PictureUrl;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,6 +1,5 @@
 package it.xpug.tai.lesson04.gallery;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 public class GalleryController implements TaiController {
 
 	private final String title;
-	private final File picturesDirectory;
+	private final PicturesDirectory picturesDirectory;
 
-	public GalleryController(String title, File picturesDirectory) {
+	public GalleryController(String title, PicturesDirectory picturesDirectory) {
 		this.title = title;
 		this.picturesDirectory = picturesDirectory;
 	}
