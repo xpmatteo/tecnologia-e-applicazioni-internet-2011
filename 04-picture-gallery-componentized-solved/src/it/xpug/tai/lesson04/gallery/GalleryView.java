@@ -15,12 +15,13 @@ import freemarker.template.TemplateException;
 public class GalleryView {
 	
 	private final String title;
-	private final String[] fileNames;
+//	private String[] fileNames;
 	private PictureUrl pictureUrl = new PictureUrl();
+	private Picture[] pictures;
 
-	public GalleryView(String title, String[] fileNames) {
+	public GalleryView(String title, Picture[] pictures) {
 		this.title = title;
-		this.fileNames = fileNames;
+		this.pictures = pictures;
 	}
 
 	public String toHtml() throws IOException {
@@ -43,11 +44,8 @@ public class GalleryView {
 
 	private List<String> picturesList() {
 		List<String> result = new ArrayList<String>();
-		String[] files = fileNames;
-		for (int i = 0; i < files.length; i++) {
-			if (files[i].endsWith(".jpg")) {
-				result.add(pictureUrl.toUrl(files[i]));
-			}
+		for (Picture picture : pictures) {
+			result.add(pictureUrl.toUrl(picture));
 		}
 		return result;
 	}

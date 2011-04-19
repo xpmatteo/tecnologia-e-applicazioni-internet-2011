@@ -1,5 +1,7 @@
 package it.xpug.tai.lesson04.gallery;
 
+import java.io.File;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -8,7 +10,7 @@ import static org.junit.Assert.*;
 public class PictureControllerTest {
 
 	private FakeTaiResponse response = new FakeTaiResponse();
-	private String url = new PictureUrl().toUrl("foo.jpg");
+	private String url = new PictureUrl().toUrl(new Picture("foo.jpg"));
 	private PicturesDirectory picturesDirectory = new PicturesDirectory("");
 	private PictureController controller = new PictureController(picturesDirectory );
 

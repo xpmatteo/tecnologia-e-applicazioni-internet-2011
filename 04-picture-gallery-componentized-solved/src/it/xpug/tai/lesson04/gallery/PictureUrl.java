@@ -1,5 +1,7 @@
 package it.xpug.tai.lesson04.gallery;
 
+import java.io.File;
+
 
 public class PictureUrl {
 
@@ -14,8 +16,8 @@ public class PictureUrl {
 		return pathInfo.substring(lastSlashIndex +1);
 	}
 
-	public String toUrl(String pictureName) {
-		return URL_PREFIX + "/" + pictureName;
+	public String toUrl(Picture picture) {
+		return URL_PREFIX + "/" + picture.getFile().getName();
 	}
 
 }

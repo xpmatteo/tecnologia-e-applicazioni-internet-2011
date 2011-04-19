@@ -19,19 +19,8 @@ public class GalleryController implements TaiController {
 	public void handle(String target, TaiResponse response) throws IOException {
 		response.setStatus(HttpServletResponse.SC_OK);
 		response.setContentType("text/html");
-		GalleryView view = new GalleryView(title, filesList());
+		GalleryView view = new GalleryView(title, picturesDirectory.getPictures());
 		response.sendHtml(view.toHtml());
-	}
-
-	private String[] filesList() {
-		List<String> result = new ArrayList<String>();
-		String[] files = picturesDirectory.list();
-		for (int i = 0; i < files.length; i++) {
-			if (files[i].endsWith(".jpg")) {
-				result.add(files[i]);
-			}
-		}
-		return result.toArray(new String[0]);
 	}
 
 	public boolean wantsToHandle(String target) {

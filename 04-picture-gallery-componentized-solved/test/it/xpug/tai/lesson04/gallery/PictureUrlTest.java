@@ -6,10 +6,10 @@ import static org.junit.Assert.*;
 
 
 public class PictureUrlTest {
+	PictureUrl imageUrl = new PictureUrl();
 
 	@Test
 	public void recognizesAnImageUrl() throws Exception {
-		PictureUrl imageUrl = new PictureUrl();
 		assertTrue("riconosciamo", imageUrl.isPictureUrl("/gallery-image/pippo"));
 		assertFalse("non riconosciamo una url straniera", 
 				imageUrl.isPictureUrl("/qualsiasialtra"));
@@ -17,13 +17,12 @@ public class PictureUrlTest {
 	
 	@Test
 	public void canReturnPathnameFromPathInfo() throws Exception {
-		PictureUrl imageUrl = new PictureUrl();
 		assertEquals("pippo.jpg", imageUrl.extractPictureName("/gallery-image/pippo.jpg"));
 	}
 	
 	@Test
-	public void producesUrlFromPictureName() throws Exception {
-		PictureUrl imageUrl = new PictureUrl();
-		assertEquals("/gallery-image/pluto.jpg", imageUrl.toUrl("pluto.jpg"));
+	public void producesUrlFromPicture() throws Exception {
+		assertEquals("/gallery-image/pluto.jpg", imageUrl.toUrl(new Picture("/foo/bar/pluto.jpg")));
 	}
+
 }

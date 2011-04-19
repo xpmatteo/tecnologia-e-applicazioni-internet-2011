@@ -10,7 +10,7 @@ public class GalleryViewTest {
 	@Test
 	public void findsImgElements() throws Exception {
 		
-		GalleryView view = new GalleryView("pippo", new String[] {"pippo.jpg", "pluto.jpg"});
+		GalleryView view = new GalleryView("pippo", new Picture[] { new Picture("pippo.jpg"), new Picture("pluto.jpg") });
 
 		findNodeInHtml("//img[@src='/gallery-image/pippo.jpg']", view.toHtml());
 		findNodeInHtml("//img[@src='/gallery-image/pluto.jpg']", view.toHtml());

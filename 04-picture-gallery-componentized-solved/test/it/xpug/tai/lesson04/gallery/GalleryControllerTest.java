@@ -31,7 +31,7 @@ public class GalleryControllerTest {
 	
 	@Test
 	public void sendsOutputFromGalleryView() throws Exception {
-		GalleryView view = new GalleryView("a title", new String[] {"foo.jpg"});
+		GalleryView view = new GalleryView("a title", new Picture[] {new Picture("foo.jpg")});
 		controller.handle("/", response);
 		assertEquals(view.toHtml(), response.htmlWrittenByController);
 	}
