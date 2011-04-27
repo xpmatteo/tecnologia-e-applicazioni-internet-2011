@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>Expenses List</title>
+    <link rel="stylesheet" href="stylesheets/expenses_list.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="src/expenses_list.js"></script>
+  </head>  
+  <body>
+    <div id="content">
+      <h1>Expenses List</h1>
+      <table border="0" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Giornali</td>
+            <td class="number">&euro; 1.50</td>
+          </tr>
+          <tr>
+            <td>Latte</td>
+            <td class="number">&euro; 2.10</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr id="total_row">
+            <th>Total</th>
+            <th id="total" class="number">&euro; 3.60</th>
+          </tr>
+        </tfoot>
+      </table>    
+
+      <form id="form" action="">
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description_field"/>
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" id="amount_field"/>
+        <input type="submit" value="Enter &rarr;"/>
+      </form>
+    </div>
+  </body>
+</html>

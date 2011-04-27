@@ -1,0 +1,30 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 10pt;
+  color: #444;
+}
+
+#content {
+  width: 50em;
+  margin: 0px auto;
+}
+
+.field_with_errors {
+  background: pink;
+}
+
+#form {
+  margin: 2em 0;
+}
+
+#total_row {
+  text-align: left;
+}
+
+.number {
+  text-align: right;
+}
+
+tfoot td, tfoot th {
+  border-top: 1px solid black;
+}
