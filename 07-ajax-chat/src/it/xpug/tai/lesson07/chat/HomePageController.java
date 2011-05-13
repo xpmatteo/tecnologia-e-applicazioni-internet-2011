@@ -1,6 +1,8 @@
-package it.xpug.tai.lesson07.chat.pages;
+package it.xpug.tai.lesson07.chat;
 
-import it.xpug.tai.lesson07.chat.TaiResponse;
+
+import it.xpug.tai.lesson07.chat.jetty.TaiController;
+import it.xpug.tai.lesson07.chat.jetty.TaiResponse;
 
 import java.io.IOException;
 
@@ -11,7 +13,7 @@ public class HomePageController implements TaiController {
 	public void handle(String target, TaiResponse response) throws IOException {
 		response.setStatus(HttpServletResponse.SC_OK);
 		response.setContentType("text/html");
-		ChatView view = new ChatView();
+		HomePageView view = new HomePageView();
 		response.getWriter().write(view.toHtml());
 	}
 

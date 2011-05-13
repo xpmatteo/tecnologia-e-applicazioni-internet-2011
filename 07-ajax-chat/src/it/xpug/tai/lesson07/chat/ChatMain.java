@@ -1,8 +1,7 @@
 package it.xpug.tai.lesson07.chat;
 
 import it.xpug.tai.lesson07.chat.jetty.ReusableJettyApp;
-import it.xpug.tai.lesson07.chat.pages.HomePageController;
-import it.xpug.tai.lesson07.chat.pages.TaiController;
+import it.xpug.tai.lesson07.chat.jetty.TaiController;
 
 import java.util.Arrays;
 import java.util.List;

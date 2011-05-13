@@ -1,7 +1,6 @@
 package it.xpug.tai.lesson07.chat.jetty;
 
 
-import it.xpug.tai.lesson07.chat.pages.TaiController;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package it.xpug.tai.lesson07.chat.pages;
+package it.xpug.tai.lesson07.chat;
 
 
 import java.io.File;
@@ -11,7 +11,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-public class ChatView {
+public class HomePageView {
 	
 	public String toHtml() throws IOException {
 		Configuration configuration = new Configuration();

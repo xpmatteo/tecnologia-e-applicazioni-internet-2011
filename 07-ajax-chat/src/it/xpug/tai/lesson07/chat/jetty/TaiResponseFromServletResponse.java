@@ -1,4 +1,4 @@
-package it.xpug.tai.lesson07.chat;
+package it.xpug.tai.lesson07.chat.jetty;
 
 import java.io.Closeable;
 import java.io.File;

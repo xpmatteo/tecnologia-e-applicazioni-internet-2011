@@ -1,6 +1,5 @@
-package it.xpug.tai.lesson07.chat.pages;
+package it.xpug.tai.lesson07.chat.jetty;
 
-import it.xpug.tai.lesson07.chat.TaiResponse;
 
 import java.io.IOException;
 

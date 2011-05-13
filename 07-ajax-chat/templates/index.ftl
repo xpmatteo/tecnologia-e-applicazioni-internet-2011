@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Ajax Chat!</title>
 
-    <script src="/javascripts/jquery-min-1.6.1.js"></script>
+    <script src="/javascripts/jquery-1.6.1.min.js"></script>
     <script src="/javascripts/chat.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" media="screen" />
   </head>
@@ -13,7 +13,7 @@
       <h1>Welcome to Ajax Chat!</h1>
 
       <form id="chat">
-        <div id="log">        
+        <div id="log">
           ciao
         </div>
         <input type="text" name="message" id="message" size="60" />
