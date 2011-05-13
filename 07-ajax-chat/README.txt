@@ -49,10 +49,6 @@ You should implement a ChatController that talks to a ChatRoom object, shared by
 
 == How to run ==
 
-execute 
-
-  $ script/start.sh
-  
-then open your browser to http://localhost:8080
+Execute with Eclipse the main function in ...chat.ChatMain then open your browser to http://localhost:8080
 
 
