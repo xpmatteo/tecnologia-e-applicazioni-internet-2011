@@ -1,0 +1,10 @@
+
+urlid development
+url jdbc:hsqldb:file:./db/databases/gallery_development;shutdown=true
+username sa
+password
+
+urlid test
+url jdbc:hsqldb:file:./db/databases/gallery_test;shutdown=true
+username sa
+password
