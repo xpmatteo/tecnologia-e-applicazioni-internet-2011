@@ -22,7 +22,8 @@ public class ChatController implements TaiController {
 	}
 
 	@Override
-	public void handle(TaiRequest request, TaiResponse response) throws IOException {		
+	public void handle(TaiRequest request, TaiResponse response) throws IOException {
+		
 		if (null != request.getParameter("message")) {
 			messages.add(request.getParameter("message"));			
 		}

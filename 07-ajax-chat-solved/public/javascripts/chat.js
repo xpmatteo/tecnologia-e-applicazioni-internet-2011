@@ -1,21 +1,23 @@
 
-function ajax_put_message() {
-  $.ajax({
-    type: 'GET',
-    url: '/chat',
-    success: function(data) {
-      return data;
-    },
-  });
+
+function periodically_update_chat() {
+  $.get("/chat", function(data) {
+    $("#log").html(data);
+  }); 
+  
+  setTimeout("periodically_update_chat()", 2000);
 }
 
 function add_chat_line() {
-  var para = $("<p/>");
-  para.text("pippo");
-  $("#log").append(para);
+  var theMessage = $("input").val();
+  $.post("/chat", {message: theMessage}, function(data) {
+    $("#log").html(data);
+  }); 
+  $("input").val("");
   return false;
 }
 
 $(document).ready(function() {
   $("form").submit(add_chat_line);
+  periodically_update_chat();
 });

@@ -32,5 +32,4 @@ public class FakeTaiRequest implements TaiRequest {
 	public void setupMethod(String method) {
 		this.method = method;
 	}
-
 }

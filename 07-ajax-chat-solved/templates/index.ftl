@@ -14,7 +14,7 @@
 
       <form id="chat">
         <div id="log">
-          ciao
+          No messages in chat
         </div>
         <input type="text" name="message" id="message" size="60" />
         <input type="submit" value="OK" />

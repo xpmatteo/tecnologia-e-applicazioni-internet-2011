@@ -49,5 +49,6 @@ public class ChatControllerTest {
 		
 		assertEquals(1, messageLog.size());
 		assertEquals("a message", messageLog.get(0));
+		assertDomEquals("<ul><li>a message</li></ul>", response.text);
 	}
 }
