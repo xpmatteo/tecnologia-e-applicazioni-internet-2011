@@ -23,6 +23,11 @@ public class ChatController implements TaiController {
 
 	@Override
 	public void handle(TaiRequest request, TaiResponse response) throws IOException {
+//		try {
+//			Thread.sleep(30000);
+//		} catch (InterruptedException e) {
+//			throw new RuntimeException(e);
+//		}
 		
 		if (null != request.getParameter("message")) {
 			messages.add(request.getParameter("message"));			
