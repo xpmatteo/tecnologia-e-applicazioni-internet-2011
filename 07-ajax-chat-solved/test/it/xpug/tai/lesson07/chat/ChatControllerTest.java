@@ -11,8 +11,9 @@ import static org.junit.Assert.*;
 
 
 public class ChatControllerTest {
-	private List<String> messageLog = new ArrayList<String>();
+	List<String> messageLog = new ArrayList<String>();
 	FakeTaiResponse response = new FakeTaiResponse();
+	FakeTaiRequest request = new FakeTaiRequest();
 	ChatController controller = new ChatController(messageLog);
 
 	@Test
@@ -23,7 +24,7 @@ public class ChatControllerTest {
 	
 	@Test
 	public void returnsHtml() throws Exception {
-		controller.handle(null, response);
+		controller.handle(request, response);
 		
 		assertEquals(200, response.statusCode);
 		assertEquals("text/html", response.contentType);
@@ -34,13 +35,19 @@ public class ChatControllerTest {
 		messageLog.add("primo");
 		messageLog.add("secondo");
 		
-		controller.handle(null, response);
+		controller.handle(request, response);
 
 		assertDomEquals("<ul><li>primo</li><li>secondo</li></ul>", response.text);
 	}
 	
 	@Test
 	public void addsMessageToLog() throws Exception {
+		request.setupParameter("message", "a message");
+		request.setupMethod("POST");
+
+		controller.handle(request, response);
 		
+		assertEquals(1, messageLog.size());
+		assertEquals("a message", messageLog.get(0));
 	}
 }

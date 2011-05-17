@@ -22,7 +22,7 @@ public class ReusableJettyHandler extends AbstractHandler {
 	public void handle(String target, HttpServletRequest request, HttpServletResponse response, int dispatch) throws IOException, ServletException {		
 		for (TaiController controller : controllers) {
 			if (controller.wantsToHandle(target)) {
-				controller.handle(target, new TaiResponseFromServletResponse(response));
+				controller.handle(new TaiRequestFromServletRequest(request), new TaiResponseFromServletResponse(response));
 				((Request)request).setHandled(true);
 				break;
 			}

@@ -1,9 +1,8 @@
 package it.xpug.tai.lesson07.chat;
+import it.xpug.tai.lesson07.chat.jetty.TaiResponse;
+
 import java.io.File;
 import java.io.IOException;
-import java.io.Writer;
-
-import it.xpug.tai.lesson07.chat.jetty.TaiResponse;
 
 
 public class FakeTaiResponse implements TaiResponse {

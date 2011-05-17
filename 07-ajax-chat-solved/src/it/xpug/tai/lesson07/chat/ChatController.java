@@ -1,16 +1,16 @@
 package it.xpug.tai.lesson07.chat;
 
 import it.xpug.tai.lesson07.chat.jetty.TaiController;
+import it.xpug.tai.lesson07.chat.jetty.TaiRequest;
 import it.xpug.tai.lesson07.chat.jetty.TaiResponse;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class ChatController implements TaiController {
 
-	List<String> messages = new ArrayList<String>();
+	private List<String> messages;
 	
 	public ChatController(List<String> messages) {
 		this.messages = messages;
@@ -22,10 +22,14 @@ public class ChatController implements TaiController {
 	}
 
 	@Override
-	public void handle(String target, TaiResponse response) throws IOException {
+	public void handle(TaiRequest request, TaiResponse response) throws IOException {		
+		if (null != request.getParameter("message")) {
+			messages.add(request.getParameter("message"));			
+		}
+		
 		response.setStatus(200);
 		response.setContentType("text/html");
-		String html = "<ul>";
+		String html = "<ul>";		
 		for (String message : messages) {
 			html += "<li>" + message + "</li>";
 		}
