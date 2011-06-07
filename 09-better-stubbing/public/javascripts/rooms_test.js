@@ -5,6 +5,7 @@ var roomsTest = TestCase.create({
 		setup: function() {
 			this.old_ajax = $.ajax;
 		},
+		
 		teardown: function() {
 			$.ajax = this.old_ajax;
 		},

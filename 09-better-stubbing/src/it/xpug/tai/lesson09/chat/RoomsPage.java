@@ -24,16 +24,12 @@ public class RoomsPage implements TaiController {
 
 	@Override
 	public void handle(TaiRequest request, TaiResponse taiResponse) throws IOException {
-		String html = "[";
+		String html = "<ul>";
 		for (Room room : rooms) {
-			if (!"[".equals(html)) {
-				html += ",";
-			}
-//			html += format("<li><a id=\"%d\" href=\"#\">%s</a></li>", room.get("id"), room.get("description"));
-			html += format("{\"roomId\": %d, \"description\": \"%s\"}", room.get("id"), room.get("description"));
+			html += format("<li><a id=\"%d\" href=\"#\">%s</a></li>", room.get("id"), room.get("description"));
 		}
-		html += "]";
-		taiResponse.setContentType("application/json");
+		html += "</ul>";
+		taiResponse.setContentType("text/html");
 		taiResponse.copyThisTextToOutput(html);
 	}
 

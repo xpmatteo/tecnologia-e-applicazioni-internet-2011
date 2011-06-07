@@ -33,20 +33,8 @@ function chat_enter_room() {
 }
 
 function load_rooms() {
-	$.ajax(
-		{
-			url: "/rooms",
-			dataType: "json",
-			complete: function(boh, status) {
-				alert(status);
-			},
-			success: function(data) {
-				for (var i in data) {
-					var room = data[i];
-					$("#rooms").append("<p>" + room["description"] + "</p>");
-				}
-			},
-		}
-	);
+	$.get("/rooms", function(data) {
+		$("#rooms").html(data);
+	});
 }
 
