@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Esperimenti</title>
+    <script src="javascripts/jquery-1.6.1.min.js"></script>
+    <script src="javascripts/testcase.js"></script>
+    <script src="javascripts/stub.js"></script>
+    <script src="javascripts/chat.js"></script>
+    <script src="javascripts/chat_test.js"></script>
+    <script src="javascripts/rooms_test.js"></script>
+    <script type="text/javascript">
+      var suite = new TestSuite(chatTest, roomsTest);
+      suite.runOnLoad();
+    </script>
+  </head>
+  <body>
+    <a id="the_link_id" href="#">some link</a>
+    <div id="log">      
+    </div>
+    <div id="rooms">    
+    </div>
+    <form>
+      <input type="text" name="message"/>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+
+Test da scrivere 
+
+- GET /rooms 
+   - gestisce la url corretta
+   - restituisce un elenco di link alle room
+   - è di tipo text/html
+   
+- GET /rooms/123
+  - gestisce la url corretta
+  - è di tipo text/html
+  - restituisce una rappresentazione html con i link a messaggi
+  - restituisce una rappresentazione html con i link a utenti
+  - contiene una form per interrogare i messaggi a partire da quello con ID tal dei tali
+  
+- GET /rooms/123/messages
+  (assumendo che la pagina è di dimensione 3)
+  - restituisce tutti i messaggi se sono al massimo 3
+  - restituisce i 3 messaggi più recenti se sono più di 3
+
+- GET /rooms/123/messages?since=3456534
+  (assumendo page size = 3)
+  - restituisce tutti i messaggi successivi a quello dato se sono al massimo 3
+  - restituisce i primi 3 messaggi successivi a quello dato se sono più di 3
+  - se ci sono + di 3 messaggi contiene un link alla pagina successiva
+  
+- GET /rooms/123/messages?since=3456534&amp;from=100
+
+
+=== autenticazione ====
+
+  - chiamata a url di autenticazione con username e password corrette restituisce token
+  - chiamata a url di autenticazione con username o password errate restituisce 401
+  
+  - chiamata a url protetta senza token di autenticazione fallisce
+  - chiamata a url protetta con token di autenticazione non valido fallisce
+  - chiamata a url protetta con token di autenticazione valido ha successo
+  
+=== Messaggi ===
+
+rappresentazione html dei messaggi
