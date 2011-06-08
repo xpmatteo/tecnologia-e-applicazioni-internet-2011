@@ -12,7 +12,7 @@ public class RoomMessagesResource implements TaiController {
 	public RoomMessagesResource(List<Message> messages) {
 	}
 
-	public void setPageSize(int pAGE_SIZE) {
+	public void setPageSize(int pageSize) {
 		throw new RuntimeException("Not yet implemented!");
 	}
 

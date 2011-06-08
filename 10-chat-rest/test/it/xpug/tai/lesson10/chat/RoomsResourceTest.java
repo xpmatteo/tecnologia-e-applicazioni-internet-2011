@@ -17,19 +17,19 @@ import static org.junit.Assert.*;
 public class RoomsResourceTest {
 	
 	private List<Room> rooms;
-	private RoomsResource page;
+	private RoomsResource resource;
 
 	@Before
 	public void setUp() throws Exception {
 		rooms = new ArrayList<Room>();
-		page = new RoomsResource(rooms);
+		resource = new RoomsResource(rooms);
 
 	}
 
 	@Test
 	public void handlesItsUrl() throws Exception {
-		assertTrue("rooms", page.wantsToHandle("/rooms"));
-		assertFalse("not rooms", page.wantsToHandle("anything"));
+		assertTrue("rooms", resource.wantsToHandle("/rooms"));
+		assertFalse("not rooms", resource.wantsToHandle("anything"));
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class RoomsResourceTest {
 		
 		FakeTaiResponse response = new FakeTaiResponse();
 		
-		page.handle(null, response );
+		resource.handle(null, response);
 		assertDomEquals(expected, response.text);
 	}
 	
@@ -51,7 +51,7 @@ public class RoomsResourceTest {
 	public void returnsHtmlContentType() throws Exception {
 		FakeTaiResponse response = new FakeTaiResponse();
 		
-		page.handle(null, response );
+		resource.handle(null, response );
 		assertEquals("text/html", response.contentType);
 	}
 }

@@ -1,13 +1,7 @@
 
-In questo progetto mostro alcuni miglioramenti alla tecnica di stubbing; in
-particolare definisco in stub.js alcune funzioni per rimpiazzare una funzione
-JS con uno "stub". Vengono usate in rooms_test.js.
+Vogliamo realizzare una chat usando lo stile 2.5 tiers (vedi presentazione di Ugo Landini citata nel diario delle lezioni.)
 
-Illustro anche la tecnica di rimettere a posto gli stub nel teardown della
-classe di test; si confronti il setup e teardown di chat_test.js con quelli
-della lezione precedente.
+Iniziamo a sviluppare la struttura delle risorse.  Il file documentazione-risorse.md descrive le risorse che dovremo implementare per realizzare una chat minimale.
 
-La funzione stubFn è presa a prestito da Test-Driven JavaScript Development
-(http://tddjs.com/).
+Il file lista-test-da-scrivere.txt contiene una prima lista dei test da implementare per costruire il comportamento specificato nel file documentazione-risorse.md.
 
-Un'altra cosa è l'uso di TestSuite per eseguire più TestCase in un colpo solo (si veda test_runner.html).

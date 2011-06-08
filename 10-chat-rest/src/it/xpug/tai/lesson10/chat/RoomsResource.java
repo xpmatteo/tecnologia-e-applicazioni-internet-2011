@@ -26,7 +26,7 @@ public class RoomsResource implements TaiController {
 	public void handle(TaiRequest request, TaiResponse taiResponse) throws IOException {
 		String html = "<ul>";
 		for (Room room : rooms) {
-			html += format("<li><a id=\"%d\" href=\"#\">%s</a></li>", room.get("id"), room.get("description"));
+			html += format("<li><a href='/rooms/%d'>%s</a></li>", room.get("id"), room.get("description"));
 		}
 		html += "</ul>";
 		taiResponse.setContentType("text/html");
