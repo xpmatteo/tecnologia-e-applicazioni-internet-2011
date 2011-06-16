@@ -1,4 +1,4 @@
-package it.xpug.tai.lesson10.chat.jdbc;
+package it.xpug.tai.lesson11.chat.jdbc;
 
 
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package it.xpug.tai.lesson10.chat.jetty;
+package it.xpug.tai.lesson11.chat.jetty;
 
 public interface TaiRequest {
 	String getTarget();

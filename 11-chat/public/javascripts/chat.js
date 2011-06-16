@@ -20,6 +20,7 @@ function chat_form_submit() {
 
 function chat_init() {
   $("form").click(chat_form_submit);
+	chat_update();
   setInterval(chat_update, 3000);
 	load_rooms();
 }

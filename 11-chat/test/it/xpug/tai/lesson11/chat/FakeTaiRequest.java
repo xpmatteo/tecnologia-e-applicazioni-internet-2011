@@ -1,6 +1,6 @@
-package it.xpug.tai.lesson10.chat;
+package it.xpug.tai.lesson11.chat;
 
-import it.xpug.tai.lesson10.chat.jetty.TaiRequest;
+import it.xpug.tai.lesson11.chat.jetty.TaiRequest;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +10,11 @@ public class FakeTaiRequest implements TaiRequest {
 	private Map<String, String> parameters = new HashMap<String, String>();
 	private Map<String, String> headers = new HashMap<String, String>();
 	private String method = "GET";
+	private String target = "/";
 
 	@Override
 	public String getTarget() {
-		return null;
+		return this.target ;
 	}
 
 	@Override
@@ -37,6 +38,10 @@ public class FakeTaiRequest implements TaiRequest {
 
 	public void setupMethod(String method) {
 		this.method = method;
+	}
+
+	public void setupTarget(String string) {
+		this.target = string;
 	}
 
 }

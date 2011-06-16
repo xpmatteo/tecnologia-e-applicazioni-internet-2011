@@ -1,7 +1,7 @@
-package it.xpug.tai.lesson10.chat;
+package it.xpug.tai.lesson11.chat;
 
-import it.xpug.tai.lesson10.chat.Room;
-import it.xpug.tai.lesson10.chat.RoomsResource;
+import it.xpug.tai.lesson11.chat.Room;
+import it.xpug.tai.lesson11.chat.RoomsResource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,15 @@ import static org.junit.Assert.*;
 
 
 public class RoomsResourceTest {
-	
 	private List<Room> rooms;
 	private RoomsResource resource;
+	FakeTaiResponse response = new FakeTaiResponse();
+	FakeTaiRequest request = new FakeTaiRequest();
 
 	@Before
 	public void setUp() throws Exception {
 		rooms = new ArrayList<Room>();
 		resource = new RoomsResource(rooms);
-
 	}
 
 	@Test
@@ -31,7 +31,7 @@ public class RoomsResourceTest {
 		assertTrue("rooms", resource.wantsToHandle("/rooms"));
 		assertFalse("not rooms", resource.wantsToHandle("anything"));
 	}
-	
+		
 	@Test
 	public void returnsHtmlForRooms() throws Exception {		
 		rooms.add(new Room(123, "Room 123"));
@@ -41,17 +41,13 @@ public class RoomsResourceTest {
 			+ "  <li><a href='/rooms/456'>Room 456</a></li>"
 			+ "</ul>";
 		
-		FakeTaiResponse response = new FakeTaiResponse();
-		
-		resource.handle(null, response);
+		resource.handle(request, response);
 		assertDomEquals(expected, response.text);
 	}
-	
+
 	@Test
 	public void returnsHtmlContentType() throws Exception {
-		FakeTaiResponse response = new FakeTaiResponse();
-		
-		resource.handle(null, response );
+		resource.handle(request, response);
 		assertEquals("text/html", response.contentType);
 	}
 }
