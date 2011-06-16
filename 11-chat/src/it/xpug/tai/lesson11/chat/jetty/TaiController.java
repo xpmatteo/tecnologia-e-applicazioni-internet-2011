@@ -6,6 +6,6 @@ public interface TaiController {
 
 	boolean wantsToHandle(String target);
 
-	void handle(TaiRequest request, TaiResponse taiResponse) throws IOException;
+	void handle(TaiRequest request, TaiResponse response) throws IOException;
 
 }

@@ -1,7 +1,7 @@
 package it.xpug.tai.lesson11.chat;
 
-import it.xpug.tai.lesson11.chat.Message;
 import it.xpug.tai.lesson11.chat.RoomMessagesResource;
+import it.xpug.tai.lesson11.chat.domain.Message;
 
 import java.util.ArrayList;
 import java.util.List;

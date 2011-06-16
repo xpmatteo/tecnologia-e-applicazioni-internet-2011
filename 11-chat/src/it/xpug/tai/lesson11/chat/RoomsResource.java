@@ -1,19 +1,20 @@
 package it.xpug.tai.lesson11.chat;
 
 import java.io.IOException;
-import java.util.List;
 
 import static java.lang.String.format;
 
+import it.xpug.tai.lesson11.chat.domain.Room;
+import it.xpug.tai.lesson11.chat.domain.RoomsList;
 import it.xpug.tai.lesson11.chat.jetty.TaiController;
 import it.xpug.tai.lesson11.chat.jetty.TaiRequest;
 import it.xpug.tai.lesson11.chat.jetty.TaiResponse;
 
 public class RoomsResource implements TaiController {
-	private final List<Room> rooms;
+	private final RoomsList rooms;
 
-	public RoomsResource(List<Room> rooms) {
-		this.rooms = rooms;
+	public RoomsResource(RoomsList roomsList) {
+		this.rooms = roomsList;
 	}
 
 	@Override
@@ -26,16 +27,14 @@ public class RoomsResource implements TaiController {
 
 	@Override
 	public void handle(TaiRequest request, TaiResponse response) throws IOException {
-		String html;
-		html = htmlForRoomList();
 		response.setContentType("text/html");
-		response.copyThisTextToOutput(html);
+		response.copyThisTextToOutput(htmlForRoomList());
 	}
 
 	private String htmlForRoomList() {
 		String html = "<ul>";
 		for (Room room : rooms) {
-			html += format("<li><a href='/rooms/%d'>%s</a></li>", room.get("id"), room.get("description"));
+			html += format("<li><a href='/rooms/%d'>%s</a></li>", room.roomId, room.description);
 		}
 		html += "</ul>";
 		return html;

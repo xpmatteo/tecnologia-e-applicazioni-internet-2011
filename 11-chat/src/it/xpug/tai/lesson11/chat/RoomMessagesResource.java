@@ -1,4 +1,5 @@
 package it.xpug.tai.lesson11.chat;
+import it.xpug.tai.lesson11.chat.domain.Message;
 import it.xpug.tai.lesson11.chat.jetty.TaiController;
 import it.xpug.tai.lesson11.chat.jetty.TaiRequest;
 import it.xpug.tai.lesson11.chat.jetty.TaiResponse;

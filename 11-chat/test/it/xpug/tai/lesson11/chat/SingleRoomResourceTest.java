@@ -1,10 +1,7 @@
 package it.xpug.tai.lesson11.chat;
 
-import it.xpug.tai.lesson11.chat.Room;
-import it.xpug.tai.lesson11.chat.SingleRoomResource;
-
-import java.util.ArrayList;
-import java.util.List;
+import it.xpug.tai.lesson11.chat.domain.Room;
+import it.xpug.tai.lesson11.chat.domain.RoomsList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,14 +12,14 @@ import static org.junit.Assert.*;
 
 
 public class SingleRoomResourceTest {
-	private List<Room> rooms;
+	private RoomsList rooms;
 	private SingleRoomResource resource;
 	FakeTaiResponse response = new FakeTaiResponse();
 	FakeTaiRequest request = new FakeTaiRequest();
 
 	@Before
 	public void setUp() throws Exception {
-		rooms = new ArrayList<Room>();
+		rooms = new RoomsList();
 		resource = new SingleRoomResource(rooms);
 	}
 
@@ -35,17 +32,17 @@ public class SingleRoomResourceTest {
 	
 	@Test
 	public void returnsHtmlForSingleRoom() throws Exception {		
-		rooms.add(new Room(456, "Room 123"));
+		rooms.add(new Room(456, "Room 456"));
 		String expected = "" +
 			"<div>" +
-//			"  <h1 class='name'>Room 123</h1>" +
-//			"  <ul>  " +
-//			"    <li><a href='/rooms/123/messages' rel='messages'>Messages</a></li>" +
-//			"    <li><a href='/rooms/123/users' rel='users'>Users</a></li>" +
-//			"  </ul>" +
+			"  <h1 class='description'>Room 456</h1>" +
+			"  <ul>  " +
+			"    <li><a href='/rooms/456/messages' rel='messages'>Messages</a></li>" +
+			"    <li><a href='/rooms/456/users' rel='users'>Users</a></li>" +
+			"  </ul>" +
 			"</div>";	
 
-		request.setupTarget("/rooms/123");
+		request.setupTarget("/rooms/456");
 		resource.handle(request, response);
 		assertEquals("text/html", response.contentType);
 		assertDomEquals(expected, response.text);

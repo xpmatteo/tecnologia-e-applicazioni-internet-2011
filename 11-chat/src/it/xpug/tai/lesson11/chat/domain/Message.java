@@ -1,4 +1,4 @@
-package it.xpug.tai.lesson11.chat;
+package it.xpug.tai.lesson11.chat.domain;
 
 public class Message {
 

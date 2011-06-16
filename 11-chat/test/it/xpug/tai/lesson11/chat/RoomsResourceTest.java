@@ -1,10 +1,7 @@
 package it.xpug.tai.lesson11.chat;
 
-import it.xpug.tai.lesson11.chat.Room;
-import it.xpug.tai.lesson11.chat.RoomsResource;
-
-import java.util.ArrayList;
-import java.util.List;
+import it.xpug.tai.lesson11.chat.domain.Room;
+import it.xpug.tai.lesson11.chat.domain.RoomsList;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,14 +12,14 @@ import static org.junit.Assert.*;
 
 
 public class RoomsResourceTest {
-	private List<Room> rooms;
+	private RoomsList rooms;
 	private RoomsResource resource;
 	FakeTaiResponse response = new FakeTaiResponse();
 	FakeTaiRequest request = new FakeTaiRequest();
 
 	@Before
 	public void setUp() throws Exception {
-		rooms = new ArrayList<Room>();
+		rooms = new RoomsList();
 		resource = new RoomsResource(rooms);
 	}
 
