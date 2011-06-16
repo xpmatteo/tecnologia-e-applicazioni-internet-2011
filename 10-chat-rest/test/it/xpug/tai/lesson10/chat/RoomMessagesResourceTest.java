@@ -3,14 +3,12 @@ package it.xpug.tai.lesson10.chat;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.xpug.tai.lesson10.chat.Room;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import static name.vaccari.matteo.html.Assert.assertDomEquals;
 
-import static org.junit.Assert.*;
 
 public class RoomMessagesResourceTest {
 
