@@ -39,10 +39,12 @@ Richiesta non condizionata: restituisce tutti i messaggi, se sono al massimo 100
     \r\n
     <ul>
       <li>
-        <span class="message-count">13252727</a>
-        <a href="/users/4444" class="author">Mario Rossi</a> 
-        <span class="message">Messaggio 1</span>
-        <span class="timestamp">2011-06-08 10:01:00</span>
+        <p class="message">
+          <span class="message-id">13252727</a>
+          <a href="/users/4444" class="author">Mario Rossi</a> 
+          <span class="message">Messaggio 1</span>
+          <span class="timestamp">2011-06-08 10:01:00</span>
+        </p>
       </li>
       ...
     </ul>

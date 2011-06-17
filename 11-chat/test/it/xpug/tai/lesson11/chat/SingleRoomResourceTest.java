@@ -27,6 +27,7 @@ public class SingleRoomResourceTest {
 	public void handlesUrlForASingleRoom() throws Exception {
 		rooms.add(new Room(1234, "a room"));
 		assertTrue("rooms existing", resource.wantsToHandle("/rooms/1234"));
+		assertFalse("anything else", resource.wantsToHandle("/something"));
 		assertFalse("room not existing", resource.wantsToHandle("/rooms/9999"));
 	}
 	

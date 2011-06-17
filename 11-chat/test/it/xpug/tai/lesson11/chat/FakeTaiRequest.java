@@ -23,11 +23,6 @@ public class FakeTaiRequest implements TaiRequest {
 	}
 	
 	@Override
-	public String getMethod() {
-		return method;
-	}
-
-	@Override
 	public String getHeader(String name) {
 		return headers.get(name.toLowerCase());
 	}
@@ -36,12 +31,17 @@ public class FakeTaiRequest implements TaiRequest {
 		this.parameters .put(name, value);
 	}
 
-	public void setupMethod(String method) {
-		this.method = method;
+	public void setupMethodPost() {
+		this.method = "POST";
 	}
 
 	public void setupTarget(String string) {
 		this.target = string;
+	}
+
+	@Override
+	public boolean isPost() {
+		return "post".equalsIgnoreCase(method);
 	}
 
 }

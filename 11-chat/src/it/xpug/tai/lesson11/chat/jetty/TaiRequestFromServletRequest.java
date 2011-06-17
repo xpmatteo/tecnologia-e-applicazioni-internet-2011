@@ -21,13 +21,13 @@ public class TaiRequestFromServletRequest implements TaiRequest {
 	}
 
 	@Override
-	public String getMethod() {
-		return servletRequest.getMethod();
+	public String getHeader(String name) {
+		return servletRequest.getHeader(name);
 	}
 
 	@Override
-	public String getHeader(String name) {
-		return servletRequest.getHeader(name);
+	public boolean isPost() {
+		return "post".equalsIgnoreCase(servletRequest.getMethod());
 	}
 
 }

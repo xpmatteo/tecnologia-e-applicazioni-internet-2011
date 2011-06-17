@@ -17,7 +17,7 @@ public class ChatMain {
 		rooms.add(new Room(1313, "non entrate in questa stanza"));
 		rooms.add(new Room(123, "questa stanza invece va bene"));
 		
-		RoomsPage roomsPage = new RoomsPage(rooms);
+		TaiController roomsPage = new RoomsPage(rooms);
 		TaiController chat = new ChatPage(messageLog);
 		
 		ReusableJettyApp app = new ReusableJettyApp(asList(roomsPage, chat));

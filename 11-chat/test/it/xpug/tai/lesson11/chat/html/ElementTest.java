@@ -14,10 +14,8 @@ public class ElementTest {
 	
 	@Test
 	public void addNestedElement() throws Exception {
-		Element element = new Element("div") {{
-			add(new Element("p"));
-		}};
-		assertDomEquals("<div><p/></div>", element.toHtml());
+		Element element = new Element("div").add(new Element("p"));
+		assertDomEquals("<div><p></p></div>", element.toHtml());
 	}
 	
 	@Test

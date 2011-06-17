@@ -1,14 +1,14 @@
 package it.xpug.tai.lesson11.chat;
 
-import java.io.IOException;
-
-import static java.lang.String.format;
-
 import it.xpug.tai.lesson11.chat.domain.Room;
 import it.xpug.tai.lesson11.chat.domain.RoomsList;
 import it.xpug.tai.lesson11.chat.jetty.TaiController;
 import it.xpug.tai.lesson11.chat.jetty.TaiRequest;
 import it.xpug.tai.lesson11.chat.jetty.TaiResponse;
+
+import java.io.IOException;
+
+import static java.lang.String.format;
 
 public class RoomsResource implements TaiController {
 	private final RoomsList rooms;
